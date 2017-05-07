@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Our Search!</title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="./search.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Droid+Sans">
+  </head>
+  <body>
+    <!--Your HTML here-->
+    <input type="text" title="Real Time Search" name="searchbox"/>
+    <input type="button" id="searchbtn" value="Search" onclick="search(searchbox.value)"/>
+    <div id="content"></div>
+    <script>
+      function hndlr(response) {
+        for (var i = 0; i < response.items.length; i++) {
+          var item = response.items[i];
+          document.getElementById("content").innerHTML += '<br>' +  '<img src="' + item.link + '" width="300"/>';
+        }
+      }
+    </script>
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk&cx=017406780437479842754:il_s2aky6zc&q=cars&callback=hndlr&searchType=image"></script>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script> -->
+    <script src="./search.js"></script>
+  </body>
+</html>
