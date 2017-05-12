@@ -7,6 +7,8 @@
         <title>KAISTians</title>
         <link href="./style.css" rel="stylesheet" />
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link href="./lightbox/ekko-lightbox.css" rel="stylesheet">
+
     </head>
     <body>
         <div class="container text-center">
@@ -30,12 +32,63 @@
 	</div>
 
         <div class=" container results">
-          <div id="output"></div>
+          <div id="output">
+            
+              <div class="row" style="">
+    <div class="offset-md-2 col-md-8">
+        <div class="row">
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
+            </a>
+        </div>
+        <div class="row">
+            <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid">
+            </a>
+        </div>
+    </div>
+</div> 
+            
+            </div>
 
         </div>
         <script src="jquery/js/jquery-3.2.1.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="search.js"></script>
+        <script src="./lightbox/ekko-lightbox.js"></script>
+        <script>
+            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                alert("JJJ");
+    event.preventDefault();
+    $(this).ekkoLightbox(
+        {
+            
+            alwaysShowClose: true,
+            showArrows:true,
+            onShown: function() {
+                console.log('Checking our the events huh?');
+            },
+            onNavigate: function(direction, itemIndex) {
+                console.log('Navigating '+direction+'. Current item: '+itemIndex);
+            }
+        });
+    
+});
+    
+</script>
     </body>
+    
 </html>
 
