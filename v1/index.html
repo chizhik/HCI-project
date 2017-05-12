@@ -1,20 +1,27 @@
-<input type="text" id="txtSearchTerm" size="40" />
-<button id="btnSearch" >Start Search</button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>KAISTians</title>
+  </head>
+  <body>
+    <div class="SearchBar">
+      <input type="text" id="txtSearchTerm" size="40" />
+      <button id="btnSearch" >Start Search</button>
+      
+    </div>
 
+    <div class="Options">
+      
+    </div>
 
-<noscript>JavaScript is required for this page.</noscript>
+    <div class="Results">
+      <div id="output"></div>
+      
+    </div>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+  </body>
+</html>
 
-
-<div id="searchResult"></div>
-
-<div id="output"></div>
-
-
-<div>
-    <a href="#" id="lnkPrev" title="Display previous result page" style="display:none;">Previous</a> <span id="lblPageNumber" style="display:none;"></span> <a href="#" id="lnkNext" title="Display next result page" style="display:none;">Next</a>
-</div>
-<script src="jquery/js/jquery-1.9.0.min.js"></script>
-<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-
-
-<script type="text/javascript" src="search.js"></script>
