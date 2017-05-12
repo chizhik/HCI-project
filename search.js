@@ -1,8 +1,21 @@
 $(function ()
 {
     $('#btnSearch').show().click(function () { Search($("#txtSearchTerm").val(),0);});
-    $('#lnkPrev').click(function () { Search($("#txtSearchTerm").val(),-1); });
-    $('#lnkNext').click(function () { Search($("#txtSearchTerm").val(),1);  });
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        // alert("JJJ");
+        event.preventDefault();
+        $(this).ekkoLightbox(
+        {    
+            alwaysShowClose: true,
+            showArrows:true,
+            onShown: function() {
+                console.log('Checking our the events huh?');
+            },
+            onNavigate: function(direction, itemIndex) {
+                console.log('Navigating '+direction+'. Current item: '+itemIndex);
+            }
+        });
+    });
 });
 
 function Search(term, direction)
@@ -20,7 +33,9 @@ function SearchCompleted(response)
     var html = "";
     for (var i = 0; i < response.items.length; i++) {
   		var item = response.items[i];
-  		html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
+  		// html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
+        html += '<a href="' + item.link + '" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">'
+        + '<img src="' + item.link + '" class="img-circle" width="350" height="350"></a>'
 	}
 	$("#output").html(html);
 }
