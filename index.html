@@ -8,6 +8,7 @@
         <link href="./style.css" rel="stylesheet" />
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link href="./options.css" rel="stylesheet" />
+	<link href="./lightbox/ekko-lightbox.css" rel="stylesheet">
     </head>
     <body>
         <div class="container text-center">
@@ -15,10 +16,17 @@
             <p>For children</p>
         </div>
         
-        <div class="container text-center searchbar">
-          <input type="text" id="txtSearchTerm" size="40" />
-          <button id="btnSearch" >Start Search</button>      
-        </div>
+        <div class="SearchBar" style="text-align:center;">
+          <input type="text" id="txtSearchTerm" size="50%" style="line-height:42px; vertical-align:top;margin:0 auto;" />
+          <input type="submit" value="Search" id="btnSearch" style="background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;;  display: inline-block"/ >
+        
+      </div>
 
         <div class="container options">
             <div class="row">
@@ -54,14 +62,37 @@
                 </div>
             </div>     
 	</div>
-        
-        <div class=" container results">
-          <div id="output"></div>
 
+        <div class="container results">
+          <div id="output">
+            
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=254" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=255" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=256" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+          </div>
         </div>
+        <div class="container loadMore text-center">
+            <button id='loadMoreButton'>Load More</button>
+        </div> 
         <script src="jquery/js/jquery-3.2.1.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="search.js"></script>
+        <script src="./lightbox/ekko-lightbox.js"></script>
     </body>
 </html>
 
