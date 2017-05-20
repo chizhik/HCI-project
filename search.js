@@ -34,8 +34,8 @@ function SearchCompleted(response)
     for (var i = 0; i < response.items.length; i++) {
   		var item = response.items[i];
   		// html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
-        html += '<a href="' + item.link + '" data-toggle="lightbox" data-gallery="example-gallery">'
-        + '<img src="' + item.link + '" class="img-circle col-sm-4" width="350" height="350"></a>'
+        html += '<a href="' + item.link + '" data-title="' + item.title + '" data-toggle="lightbox" data-gallery="example-gallery">'
+        + '<img src="' + item.link + '" title="' + item.title + '" alt="' + item.title + '" class="img-circle col-sm-4" width="350" height="350"></a>'
 	}
 	$("#output").html(html);
 }
