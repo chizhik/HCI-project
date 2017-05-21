@@ -58,6 +58,19 @@
     background-color: gray;
 }
 
+#option-animal img {
+    width: 80px;
+    height: 80px;
+    padding-left: 3px;
+}
+
+#option-place img {
+    width: 80px;
+    height: 80px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
 .place-image {
     width: 90px;
     height: 90px;
