@@ -62,6 +62,7 @@ $('#option-color').hover(function() {
 });
  
 
+// option in this bar is chosen
 $('.animalimage').click(function() {  
 	op_animal_hov = 2
 });
@@ -75,8 +76,46 @@ $('.color').click(function() {
 });
 
 
-
-
+// select particular animal
+// var animal1 = 0;
+// var animal2 = 0;
+// var animal3 = 0;
+// var animal4 = 0;
+// var animal5 = 0;
+// var animal6 = 0;
+// var animal7 = 0;
+// var animal8 = 0;
+// var animal9 = 0;
+// var animal10 = 0;
+for (i = 0; i < 10; i++) {
+	$('#animal' + (i + 1)).click(function() { 
+		if (this.style.backgroundColor === "gray") {
+			this.style.backgroundColor="white";
+		} else {
+			this.style.backgroundColor="gray";
+		}
+	});
+}
+// select particular place
+for (i = 0; i < 10; i++) {
+	$('#place' + (i + 1)).click(function() {  
+		if (this.style.backgroundColor === "gray") {
+			this.style.backgroundColor="white";
+		} else {
+			this.style.backgroundColor="gray";
+		}
+	});
+}
+// select particular color
+for (i = 0; i < 10; i++) {
+	$('#color' + (i + 1)).click(function() {  
+		if (this.style.backgroundColor === "gray") {
+			this.style.backgroundColor="white";
+		} else {
+			this.style.backgroundColor="gray";
+		}
+	});
+}
 
 
 
