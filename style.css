@@ -14,7 +14,10 @@
 #bigger{
     font-size: 54px;
 }
-
+#txtSearchTerm{
+    font-size: 30px;
+    padding-left:10px;
+}
 #btnSearch{
     background-color: #4CAF50; /* Green */
           border: none;
@@ -26,5 +29,5 @@
     display: inline-block;
        
     font-family: 'Barrio', cursive;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
