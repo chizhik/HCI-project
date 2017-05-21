@@ -1,14 +1,15 @@
 var search_index = 0;
+var search_term = '';
 
 $(function ()
 {
-    $('#btnSearch').click(function () { Search($("#txtSearchTerm").val(),search_index);});
+    $('#btnSearch').click(function () { Search($("#txtSearchTerm").val());});
     $('input[type=text]').on('keydown', function(e){
         if (e.which==13){
-            Search($("#txtSearchTerm").val(),search_index);
+            Search($("#txtSearchTerm").val());
         }
     });
-    $('#loadMoreButton').click(function () { Search($('#txtSearchTerm').val(), search_index);});
+    $('#loadMoreButton').click(function () { Search($('#txtSearchTerm').val());});
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         // alert("JJJ");
         event.preventDefault();
@@ -26,22 +27,26 @@ $(function ()
     });
 });
 
-function Search(term, page)
+function Search(term)
 {
-    var start = page*10 + 1;
+    if (!(search_term === term)) {
+        search_term = term;
+        search_index = 0;
+    }
+    var start = search_index*10 + 1;
 	var query = term.split(" ").join("+");
 	console.log(query);
 	var url = "https://www.googleapis.com/customsearch/v1?key="
     + "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
     // url = "http://localhost/dummy.js?callback=?";
-    if (page == 0) {
+    if (search_index == 0) {
         $.getJSON(url, '', FirstResults);
     }
     else
     {
         $.getJSON(url, '', MoreResults);
     }
-    if (page <= 4) {
+    if (search_index <= 4) {
         $('.loadMore').show()
     }
     else {
