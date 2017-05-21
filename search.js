@@ -3,6 +3,11 @@ var search_index = 0;
 $(function ()
 {
     $('#btnSearch').click(function () { Search($("#txtSearchTerm").val(),search_index);});
+    $('input[type=text]').on('keydown', function(e){
+        if (e.which==13){
+            Search($("#txtSearchTerm").val(),search_index);
+        }
+    });
     $('#loadMoreButton').click(function () { Search($('#txtSearchTerm').val(), search_index);});
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         // alert("JJJ");
