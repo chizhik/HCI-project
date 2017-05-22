@@ -52,65 +52,31 @@ $(function ()
     });
 });
 
-function Search(term)
+function SearchOpts()
 {
-    if (!(search_term === term)) {
-        search_term = term;
-        search_index = 0;
+    var opts = '';
+    if(favorite != ""){
+        opts = opts + " " + favorite;
     }
+    if(color != ""){
+        opts = opts + " " + color;
+    }
+    if(place != ""){
+        opts = opts + " " + place;
+    }
+    if(type = ""){
+        opts = opts + " " + type;
+    }
+    console.log(opts);
+    $("#txtSearchTerm").val(opts);
+    search_term = opts;
+    search_index = 0;
+
     var start = search_index*10 + 1;
-        if(term.split(" ").join("+") != ""){
-            query = term.split(" ").join("+");
-        }
-	
-	console.log(query);
-        
-        if(query == ""){
-            if(favorite != ""){
-            query = favorite;
-            }
-            if(color != ""){
-                if(query == ""){
-                    query = color;
-                }else{
-                    query = "+" + color;
-                }                
-            }
-            if(place != ""){
-                if(query == ""){
-                    query = place;
-                }else{
-                    query = "+" + place;
-                }  
-            }
-            if(type = ""){
-                if(query == ""){
-                    query = type;
-                }else{
-                    query = "+" + type;
-                } 
-            }  
-        }else{
-            if(favorite != ""){
-            query = query + "+" + favorite;
-            }
-            if(color != ""){
-                query = query + "+" + color;
-            }
-            if(place != ""){
-                query = query + "+" + place;
-            }
-            if(type = ""){
-                query = query + "+" + type;
-            }
-        }        
-               
-        console.log(query);
-        
-	var url = "https://www.googleapis.com/customsearch/v1?key="
-    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
-    // url = "http://localhost/dummy.js?callback=?";
-    if (search_index == 0 && query != "") {
+    var opts_query = opts.split(" ").join("+");
+    var url = "https://www.googleapis.com/customsearch/v1?key="
+    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + opts_query + "&searchType=image&callback=?";
+    if (search_index == 0) {
         $.getJSON(url, '', FirstResults);
     }
     else
@@ -123,7 +89,35 @@ function Search(term)
     else {
         $('.loadMore').hide();
     }
-    //search_index += 1
+    search_index += 1
+}
+
+function Search(term)
+{
+    if (!(search_term === term)) {
+        search_term = term;
+        search_index = 0;
+    }
+    var start = search_index*10 + 1;
+    var query = term.split(" ").join("+");
+    console.log(query);
+    var url = "https://www.googleapis.com/customsearch/v1?key="
+    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
+    // url = "http://localhost/dummy.js?callback=?";
+    if (search_index == 0) {
+        $.getJSON(url, '', FirstResults);
+    }
+    else
+    {
+        $.getJSON(url, '', MoreResults);
+    }
+    if (search_index <= 4) {
+        $('.loadMore').show()
+    }
+    else {
+        $('.loadMore').hide()
+    }
+    search_index += 1
     
 }
 

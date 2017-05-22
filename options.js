@@ -130,7 +130,7 @@ for (i = 0; i < 10; i++) {
 			}
 			op_animal_hov = 0;
                         setFavorite("");
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		} else {
 			op_animal_hov = 2;
 			for (j = 0; j < 10; j++) {
@@ -138,7 +138,7 @@ for (i = 0; i < 10; i++) {
 			}
 			this.style.backgroundColor="yellow";
                         setFavorite($(this).find('img').map(function() { return this.alt; }).get().toString());                          
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		}
 	});
 }
@@ -156,7 +156,7 @@ for (i = 0; i < 10; i++) {
 			}
 			op_place_hov = 0;
                         setPlace("");
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		} else {
 			op_place_hov = 2;
 			for (j = 0; j < 10; j++) {
@@ -164,7 +164,7 @@ for (i = 0; i < 10; i++) {
 			}
 			this.style.backgroundColor="yellow";
                         setPlace($(this).find('img').map(function() { return this.alt; }).get().toString());  
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		}
 	});
 }
@@ -182,7 +182,7 @@ for (i = 0; i < 6; i++) {
 			}
 			op_color_hov = 0;
                         setColor("");
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		} else {
 			op_color_hov = 2;
 			for (j = 0; j < 6; j++) {
@@ -190,7 +190,7 @@ for (i = 0; i < 6; i++) {
 			}
 			this.style.backgroundColor="yellow";
 			//setColor($(this).find('img').map(function() { return this.alt; }).get().toString());
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		}
 	});
 }
@@ -209,7 +209,7 @@ for (i = 0; i < 2; i++) {
 			}
 			op_type_hov = 0;
                         setType("");
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		} else {
 			op_type_hov = 2;
 			for (j = 0; j < 2; j++) {
@@ -217,7 +217,7 @@ for (i = 0; i < 2; i++) {
 			}
 			this.style.backgroundColor="yellow";
                         setType($(this).find('img').map(function() { return this.alt; }).get().toString());    
-                        Search($('#txtSearchTerm').val());
+                        SearchOpts();
 		}
 	});
 }
