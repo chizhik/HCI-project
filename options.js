@@ -129,13 +129,16 @@ for (i = 0; i < 10; i++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
 			}
 			op_animal_hov = 0;
+                        setFavorite("");
+                        Search($('#txtSearchTerm').val());
 		} else {
 			op_animal_hov = 2;
 			for (j = 0; j < 10; j++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
 			}
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+                        setFavorite($(this).find('img').map(function() { return this.alt; }).get().toString());                          
+                        Search($('#txtSearchTerm').val());
 		}
 	});
 }
@@ -152,13 +155,16 @@ for (i = 0; i < 10; i++) {
 				document.getElementById('place' + (j+1)).style.backgroundColor="white";
 			}
 			op_place_hov = 0;
+                        setPlace("");
+                        Search($('#txtSearchTerm').val());
 		} else {
 			op_place_hov = 2;
 			for (j = 0; j < 10; j++) {
 				document.getElementById('place' + (j+1)).style.backgroundColor="white";
 			}
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+                        setPlace($(this).find('img').map(function() { return this.alt; }).get().toString());  
+                        Search($('#txtSearchTerm').val());
 		}
 	});
 }
@@ -176,20 +182,22 @@ for (i = 0; i < 6; i++) {
 			}
 			op_color_hov = 0;
                         setColor("");
+                        Search($('#txtSearchTerm').val());
 		} else {
 			op_color_hov = 2;
 			for (j = 0; j < 6; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+			//setColor($(this).find('img').map(function() { return this.alt; }).get().toString());
+                        Search($('#txtSearchTerm').val());
 		}
 	});
 }
 
-// select particular color
+// select particular type
 for (i = 0; i < 2; i++) {
-	$('#animal-type' + (i + 1)).click(function() {  
+	$('#animal-type' + (i + 1)).click({msg : i+1},function(e) {  
 
 		// select this
 		//console.log(this.style.backgroundColor);
@@ -201,14 +209,15 @@ for (i = 0; i < 2; i++) {
 			}
 			op_type_hov = 0;
                         setType("");
+                        Search($('#txtSearchTerm').val());
 		} else {
 			op_type_hov = 2;
 			for (j = 0; j < 2; j++) {
 				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
 			}
 			this.style.backgroundColor="yellow";
-                        setType($(this).attr("alt"));
-                        console.log(this);                        
+                        setType($(this).find('img').map(function() { return this.alt; }).get().toString());    
+                        Search($('#txtSearchTerm').val());
 		}
 	});
 }

@@ -1,10 +1,12 @@
 var search_index = 0;
 var search_term = '';
 
-var favorite;
-var color;
-var place;
-var type;
+var query = "";
+
+var favorite = "";
+var color = "";
+var place = "";
+var type = "";
 
 function setFavorite(add){
     favorite = add;
@@ -14,7 +16,7 @@ function setColor(add){
     color = add;
 }
 
-function setFavorite(add){
+function setPlace(add){
     place = add;
 }
 
@@ -57,12 +59,58 @@ function Search(term)
         search_index = 0;
     }
     var start = search_index*10 + 1;
-	var query = term.split(" ").join("+");
+        if(term.split(" ").join("+") != ""){
+            query = term.split(" ").join("+");
+        }
+	
 	console.log(query);
+        
+        if(query == ""){
+            if(favorite != ""){
+            query = favorite;
+            }
+            if(color != ""){
+                if(query == ""){
+                    query = color;
+                }else{
+                    query = "+" + color;
+                }                
+            }
+            if(place != ""){
+                if(query == ""){
+                    query = place;
+                }else{
+                    query = "+" + place;
+                }  
+            }
+            if(type = ""){
+                if(query == ""){
+                    query = type;
+                }else{
+                    query = "+" + type;
+                } 
+            }  
+        }else{
+            if(favorite != ""){
+            query = query + "+" + favorite;
+            }
+            if(color != ""){
+                query = query + "+" + color;
+            }
+            if(place != ""){
+                query = query + "+" + place;
+            }
+            if(type = ""){
+                query = query + "+" + type;
+            }
+        }        
+               
+        console.log(query);
+        
 	var url = "https://www.googleapis.com/customsearch/v1?key="
-    + "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
+    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
     // url = "http://localhost/dummy.js?callback=?";
-    if (search_index == 0) {
+    if (search_index == 0 && query != "") {
         $.getJSON(url, '', FirstResults);
     }
     else
@@ -70,12 +118,12 @@ function Search(term)
         $.getJSON(url, '', MoreResults);
     }
     if (search_index <= 4) {
-        $('.loadMore').show()
+        $('.loadMore').show();
     }
     else {
-        $('.loadMore').hide()
+        $('.loadMore').hide();
     }
-    search_index += 1
+    //search_index += 1
     
 }
 
