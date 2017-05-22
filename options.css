@@ -55,7 +55,7 @@
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 .option:hover {
-    background-color: gray;
+    background-color: yellow;
 }
 
 #option-animal img {
@@ -125,11 +125,11 @@
 }
 
 .place-image:hover {
-    background-color: gray;
+    background-color: yellow;
 }
 
 .animalimage:hover {
-     background-color: gray;
+     background-color: yellow;
 }
 
 .color {
@@ -166,7 +166,7 @@ svg {
     margin-left: 0.35em; 
 }
 .color:hover {
-     background-color: gray;
+     background-color: yellow;
 }
 text {
     font: arial;

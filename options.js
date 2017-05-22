@@ -99,81 +99,113 @@ $('#option-cartoon-real').hover(function() {
  
 
 // option in this bar is chosen
-$('.animalimage').click(function() {  
-	op_animal_hov = 2;
-});
+// $('.animalimage').click(function() {  
+// 	op_animal_hov = 2;
+// });
 
-$('.place-image').click(function() {  
-	op_place_hov = 2;
-});
+// $('.place-image').click(function() {  
+// 	op_place_hov = 2;
+// });
 
-$('.color').click(function() {  
-	op_color_hov = 2;
-});
+// $('.color').click(function() {  
+// 	op_color_hov = 2;
+// });
 
-$('.animal-type').click(function() {  
-	op_type_hov = 2;
-});
+// $('.animal-type').click(function() {  
+// 	op_type_hov = 2;
+// });
 
 
 // select particular animal
 for (i = 0; i < 10; i++) {
-	$('#animal' + (i + 1)).click(function() { 
-		// deselect everything 
-		for (j = 0; j < 10; j++) {
-			document.getElementById('animal' + (j+1)).style.backgroundColor="white";
-		}
+	$('#animal' + (i + 1)).click(function() {  
+
 		// select this
-		if (this.style.backgroundColor === "gray") {
-			this.style.backgroundColor="white";
+		//console.log(this.style.backgroundColor);
+		if (this.style.backgroundColor === "yellow") {
+			//this.style.backgroundColor="white";
+			// deselect everything 
+			for (j = 0; j < 10; j++) {
+				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
+			}
+			op_animal_hov = 0;
 		} else {
-			this.style.backgroundColor="gray";
+			op_animal_hov = 2;
+			for (j = 0; j < 10; j++) {
+				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
+			}
+			this.style.backgroundColor="yellow";
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
 // select particular place
 for (i = 0; i < 10; i++) {
 	$('#place' + (i + 1)).click(function() {  
-		// deselect everything 
-		for (j = 0; j < 10; j++) {
-			document.getElementById('place' + (j+1)).style.backgroundColor="white";
-		}
+
 		// select this
-		if (this.style.backgroundColor === "gray") {
-			this.style.backgroundColor="white";
+		//console.log(this.style.backgroundColor);
+		if (this.style.backgroundColor === "yellow") {
+			//this.style.backgroundColor="white";
+			// deselect everything 
+			for (j = 0; j < 10; j++) {
+				document.getElementById('place' + (j+1)).style.backgroundColor="white";
+			}
+			op_place_hov = 0;
 		} else {
-			this.style.backgroundColor="gray";
+			op_place_hov = 2;
+			for (j = 0; j < 10; j++) {
+				document.getElementById('place' + (j+1)).style.backgroundColor="white";
+			}
+			this.style.backgroundColor="yellow";
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
 // select particular color
 for (i = 0; i < 6; i++) {
 	$('#color' + (i + 1)).click(function() {  
-		// deselect everything 
-		for (j = 0; j < 6; j++) {
-			document.getElementById('color' + (j+1)).style.backgroundColor="white";
-		}
+
 		// select this
-		if (this.style.backgroundColor === "gray") {
-			this.style.backgroundColor="white";
+		//console.log(this.style.backgroundColor);
+		if (this.style.backgroundColor === "yellow") {
+			//this.style.backgroundColor="white";
+			// deselect everything 
+			for (j = 0; j < 6; j++) {
+				document.getElementById('color' + (j+1)).style.backgroundColor="white";
+			}
+			op_color_hov = 0;
 		} else {
-			this.style.backgroundColor="gray";
+			op_color_hov = 2;
+			for (j = 0; j < 6; j++) {
+				document.getElementById('color' + (j+1)).style.backgroundColor="white";
+			}
+			this.style.backgroundColor="yellow";
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
 
 // select particular color
 for (i = 0; i < 2; i++) {
-	$('#animal-type' + (i + 1)).click(function() {
-		// deselect everything 
-		for (j = 0; j < 2; j++) {
-			document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
-		}
-		// select this  
-		if (this.style.backgroundColor === "gray") {
-			this.style.backgroundColor="white";
+	$('#animal-type' + (i + 1)).click(function() {  
+
+		// select this
+		//console.log(this.style.backgroundColor);
+		if (this.style.backgroundColor === "yellow") {
+			//this.style.backgroundColor="white";
+			// deselect everything 
+			for (j = 0; j < 2; j++) {
+				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
+			}
+			op_type_hov = 0;
 		} else {
-			this.style.backgroundColor="gray";
+			op_type_hov = 2;
+			for (j = 0; j < 2; j++) {
+				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
+			}
+			this.style.backgroundColor="yellow";
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
