@@ -1,6 +1,29 @@
 var search_index = 0;
 var search_term = '';
 
+var favorite;
+var color;
+var place;
+var type;
+
+function setFavorite(add){
+    favorite = add;
+}
+
+function setColor(add){
+    color = add;
+}
+
+function setFavorite(add){
+    place = add;
+}
+
+function setType(add){
+    type = add;
+}
+
+
+
 $(function ()
 {
     $('#btnSearch').click(function () { Search($("#txtSearchTerm").val());});

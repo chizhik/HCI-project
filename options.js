@@ -175,6 +175,7 @@ for (i = 0; i < 6; i++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			op_color_hov = 0;
+                        setColor("");
 		} else {
 			op_color_hov = 2;
 			for (j = 0; j < 6; j++) {
@@ -199,13 +200,15 @@ for (i = 0; i < 2; i++) {
 				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
 			}
 			op_type_hov = 0;
+                        setType("");
 		} else {
 			op_type_hov = 2;
 			for (j = 0; j < 2; j++) {
 				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
 			}
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+                        setType($(this).attr("alt"));
+                        console.log(this);                        
 		}
 	});
 }
