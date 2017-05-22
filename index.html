@@ -7,18 +7,24 @@
         <title>KAISTians</title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link href="./options.css" rel="stylesheet" />
+	<link href="./lightbox/ekko-lightbox.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
     </head>
     <body>
-        <div class="container text-center">
-            <h1>Animal Search</h1>      
+        <div class="container text-center">  
+        <div class="col-sm-4" >
+            <div class='logo'><div id="bigger">AnimalSearch </div>    
             <p>For children</p>
+                </div>
         </div>
         
-        <div class="container text-center searchbar">
-          <input type="text" id="txtSearchTerm" size="40" />
-          <button id="btnSearch" >Start Search</button>      
-        </div>
-
+        <div class="col-sm-8" style="text-align:left; margin-top : 20px; vertical-align:middle; padding-left:60px; padding-top:10px; padding-bottom:40px">
+          <input type="text" id="txtSearchTerm" size="31%" style="line-height:43px; margin:30 auto;margin-top:30px;" />
+          <input type="submit" value="Search" id="btnSearch" / >
+        
+      </div>
+            </div>
+<br/><br/>
         <div class="container options">
             <div class="navigation">
                 <div class="row">
@@ -219,7 +225,7 @@
                         </div>   
                     </div>
                     <div class="col-sm-1">
-                        <div class="animal-type" id="animal-type1">
+                        <div class="animal-type" id="animal-type2">
                             <img src="images/dog-real.png" alt="dog real">    
                         </div>   
                     </div>
@@ -261,17 +267,50 @@
                       </svg>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div> -->
                  
   
         
         <div class=" container results">
           <div id="output"></div>
-
+        </div>     
+	</div>
         </div>
+
+        <div class="container results">
+          <div id="output">
+            
+            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=251" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=252" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=253" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=254" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=255" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+            <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="example-gallery">
+                <img src="https://unsplash.it/600.jpg?image=256" class="img-circle col-sm-4" width="350" height="350">
+            </a>
+          </div>
+        </div>
+        <div class="container loadMore text-center">
+            <div id = 'loadMoreButton'>
+                <p id ='loadMoreText'> Load More </p><img src="./images/black_down.png">
+            </div>
+            
+        </div> 
         <script src="jquery/js/jquery-3.2.1.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="search.js"></script>
         <script type="text/javascript" src="options.js"></script>
+        <script src="./lightbox/ekko-lightbox.js"></script>
     </body>
 </html>
