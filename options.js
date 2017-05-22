@@ -24,7 +24,7 @@ $('#option-animal').hover(function() {
 			$(".animal-colors").hide();
 			op_color_hov = 0; 
 		}
-                if (op_type_hov == 1) {
+        if (op_type_hov == 1) {
 			$(".animal-type").hide();
 			op_type_hov = 0; 
 		}
@@ -46,7 +46,7 @@ $('#option-place').hover(function() {
 			$(".animal-colors").hide();
 			op_color_hov = 0; 
 		}
-                if (op_type_hov == 1) {
+        if (op_type_hov == 1) {
 			$(".animal-type").hide();
 			op_type_hov = 0; 
 		}
@@ -68,7 +68,7 @@ $('#option-color').hover(function() {
 			console.log('2');
 			op_animal_hov = 0; 
 		}
-                if (op_type_hov == 1) {
+        if (op_type_hov == 1) {
 			$(".animal-type").hide();
 			op_type_hov = 0; 
 		}
@@ -89,7 +89,7 @@ $('#option-cartoon-real').hover(function() {
 			console.log('2');
 			op_animal_hov = 0; 
 		}
-                if (op_color_hov == 1) {
+        if (op_color_hov == 1) {
 			$(".animal-colors").hide();
 			console.log('tt');
 			op_color_hov = 0; 
@@ -117,18 +117,13 @@ $('.animal-type').click(function() {
 
 
 // select particular animal
-// var animal1 = 0;
-// var animal2 = 0;
-// var animal3 = 0;
-// var animal4 = 0;
-// var animal5 = 0;
-// var animal6 = 0;
-// var animal7 = 0;
-// var animal8 = 0;
-// var animal9 = 0;
-// var animal10 = 0;
 for (i = 0; i < 10; i++) {
 	$('#animal' + (i + 1)).click(function() { 
+		// deselect everything 
+		for (j = 0; j < 10; j++) {
+			document.getElementById('animal' + (j+1)).style.backgroundColor="white";
+		}
+		// select this
 		if (this.style.backgroundColor === "gray") {
 			this.style.backgroundColor="white";
 		} else {
@@ -139,6 +134,11 @@ for (i = 0; i < 10; i++) {
 // select particular place
 for (i = 0; i < 10; i++) {
 	$('#place' + (i + 1)).click(function() {  
+		// deselect everything 
+		for (j = 0; j < 10; j++) {
+			document.getElementById('place' + (j+1)).style.backgroundColor="white";
+		}
+		// select this
 		if (this.style.backgroundColor === "gray") {
 			this.style.backgroundColor="white";
 		} else {
@@ -147,8 +147,13 @@ for (i = 0; i < 10; i++) {
 	});
 }
 // select particular color
-for (i = 0; i < 10; i++) {
+for (i = 0; i < 6; i++) {
 	$('#color' + (i + 1)).click(function() {  
+		// deselect everything 
+		for (j = 0; j < 6; j++) {
+			document.getElementById('color' + (j+1)).style.backgroundColor="white";
+		}
+		// select this
 		if (this.style.backgroundColor === "gray") {
 			this.style.backgroundColor="white";
 		} else {
@@ -158,8 +163,13 @@ for (i = 0; i < 10; i++) {
 }
 
 // select particular color
-for (i = 0; i < 10; i++) {
-	$('#animal-type' + (i + 1)).click(function() {  
+for (i = 0; i < 2; i++) {
+	$('#animal-type' + (i + 1)).click(function() {
+		// deselect everything 
+		for (j = 0; j < 2; j++) {
+			document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
+		}
+		// select this  
 		if (this.style.backgroundColor === "gray") {
 			this.style.backgroundColor="white";
 		} else {
