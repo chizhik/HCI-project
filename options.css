@@ -2,3 +2,173 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.row {
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.animal-favorites img{
+    width: 60px;
+    margin-top: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em; 
+}
+
+.option img{
+    width: 88px;
+    margin-top: 0.025em;
+    margin-right: 0.01em;
+    margin-bottom: 0.2em;
+    margin-left: 0.15em; 
+}
+
+.animal-places img{
+    width: 80px;
+    margin-top: 0.35em;
+    margin-right: 0.35em;
+    margin-bottom: 0.35em;
+    margin-left: 0.35em; 
+}
+
+
+.animalimage {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.option {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+.option:hover {
+    background-color: yellow;
+}
+
+#option-animal img {
+    width: 80px;
+    height: 80px;
+    padding-left: 3px;
+}
+
+#option-place img {
+    width: 80px;
+    height: 80px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+#option-cartoon-real img {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#option-cartoon-real {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.animal-type img {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.animal-type {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.place-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.place-image:hover {
+    background-color: yellow;
+}
+
+.animalimage:hover {
+     background-color: yellow;
+}
+
+.color {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+.animal-colors {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.animal-places {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.animal-favorites {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;    
+}
+/*.navigation {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}*/
+svg {
+    /*width: 60px;*/
+    margin-top: 0.35em;
+    margin-right: 0.35em;
+    margin-bottom: 0.35em;
+    margin-left: 0.35em; 
+}
+.color:hover {
+     background-color: yellow;
+}
+text {
+    font: arial;
+}
+

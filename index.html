@@ -23,25 +23,249 @@
           <input type="text" id="txtSearchTerm" size="31%" style="line-height:43px; margin:30 auto;margin-top:30px;" />
           <input type="submit" value="Search" id="btnSearch" / >
         
-      </div>
-            </div>
-<br/><br/>
+      	</div>
+
         <div class="container options">
-            <div class="row">
-                <div class="col-sm-1">
-                  <svg width="100" height="51">
-                    <rect width="300" height="100" style="fill:rgb(23, 23, 23);stroke-width:3;stroke:rgb(0,0,0)" />
-                  </svg>
+            <div class="navigation">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-1">
+                        <div class="option" id="option-animal">
+                            <img src="images/star.svg" style="" alt="favorite">
+                        </div>
+                    </div>  
+                    <div class="col-sm-1">
+                        <div class="option" id="option-place">
+                            <img src="images/flag-map-marker.svg" alt="place">
+                        </div> 
+                    </div>
+                    <div class="col-sm-1">
+                      <div class="option" id="option-color">
+                        <img src="images/color.png" alt="color">
+                      </div> 
+                    </div>
+                    <div class="col-sm-1">
+                      <div class="option" id="option-cartoon-real">
+                          <img src="images/cartoons-vs-real.jpg" alt="color">
+                      </div> 
+                    </div>
+          
+            </div>
+
+            <div class="animal-favorites">
+                <div class="row" id="animals">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal1">
+                            <img src="images/dog.png" alt="dog">    
+                        </div>   
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal2">
+                            <img src="images/cat.png" alt="cat">    
+                        </div>        
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal3">
+                            <img src="images/penguin.png" alt="penguin">    
+                        </div>                               
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal4">
+                            <img src="images/monkey.png" alt="monkey">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal5">
+                            <img src="images/pig.png" alt="pig">    
+                        </div>               
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="animalimage" id="animal6">
+                            <img src="images/bear.png" alt="bear">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="animalimage" id="animal7">
+                            <img src="images/rabbit.png" alt="rabbit">    
+                        </div>     
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal8">
+                            <img src="images/tiger.png" alt="tiger">    
+                        </div>           
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal9">
+                            <img src="images/meerkat.png" alt="meerkat">    
+                        </div>       
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animalimage" id="animal10">
+                            <img src="images/panda.png" alt="panda">    
+                        </div>        
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>            
+            </div>
+
+            <div class="animal-places">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-1">
+                        <div class="place-image" id="place1">
+                            <img src="images/ice.png" alt="ice">    
+                        </div>   
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="place-image" id="place2">
+                            <img src="images/desert.png" alt="desert">    
+                        </div>        
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="place-image" id="place3">
+                            <img src="images/forest.png" alt="forest">    
+                        </div>                               
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="place-image" id="place4">
+                            <img src="images/savanna.png" alt="savanna">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="place-image" id="place5">
+                            <img src="images/tundra.png" alt="tundra">    
+                        </div>               
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="place-image" id="place6">
+                            <img src="images/jungle.png" alt="jungle">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="place-image" id="place7">
+                            <img src="images/mountain.png" alt="mountain">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="place-image" id="place8">
+                            <img src="images/underground.png" alt="underground">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="place-image" id="place9">
+                            <img src="images/zoo.png" alt="zoo">    
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="place-image" id="place10">
+                            <img src="images/ocean.png" alt="ocean">    
+                        </div>          
+                    </div>
+
+
+                    <div class="col-sm-1"></div>
+                </div>            
+            </div>
+            <div class="animal-colors">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-1">
+                        <div class="color" id="color1">
+                          <svg width="90" height="90">
+                            <circle cx="40" cy="40" r="40" style="fill:rgb(23, 23, 23);" />
+                          </svg>   
+                        </div>   
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="color" id="color2">
+                          <svg width="90" height="90">
+                            <circle cx="40" cy="40" r="40" style="fill:rgb(255,250,250);" />
+                          </svg>    
+                        </div>        
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="color" id="color3">
+                          <svg width="90" height="90">
+                            <circle cx="40" cy="40" r="40" style="fill:rgb(34,139,34);" />
+                          </svg>     
+                        </div>                               
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="color" id="color4">
+                          <svg width="90" height="90">
+                            <circle cx="40" cy="40" r="40" style="fill:rgb(193, 154, 107);" />
+                          </svg>   
+                        </div>          
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="color" id="color5">
+                          <svg width="90" height="90">
+                            <circle cx="40" cy="40" r="40" style="fill:rgb(139, 99, 55);" />
+                          </svg>   
+                        </div>               
+                    </div>
+                    <div class="col-sm-1">
+                         <div class="color" id="color6">
+                          <svg width="90" height="90">
+                            <circle cx="40" cy="40" r="40" style="fill:rgb(115,115,125);" />
+                          </svg>   
+                        </div>          
+                    <div class="col-sm-1"></div>
+                    </div> 
                 </div>
-                <div class="col-sm-1">
-                  <svg width="100" height="51">
-                    <rect class='color' width="300" height="100" style="fill:rgb(255,250,250);stroke-width:3;stroke:rgb(0,0,0)" />
-                  </svg>
+            </div>
+                    
+            <div class="animal-cartoon-real">
+                <div class="row">
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-1">
+                        <div class="animal-type" id="animal-type1">
+                            <img src="images/dog-cartoon.png" alt="dog cartoon">    
+                        </div>   
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="animal-type" id="animal-type1">
+                            <img src="images/dog-real.png" alt="dog real">    
+                        </div>   
+                    </div>
                 </div>
-                <div class="col-sm-1">
-                  <svg width="100" height="51">
-                    <rect width="300" height="100" style="fill:rgb(34,139,34);stroke-width:3;stroke:rgb(0,0,0)" />
-                  </svg>
+            </div> 
+
+
+            <!--                 -->
+
+<!--                 <div class="row">
+                    <div class="col-sm-1">
+                      <svg width="100" height="51">
+                        <rect width="300" height="100" style="fill:rgb(23, 23, 23);" />
+                      </svg>
+                    </div>
+                    <div class="col-sm-1">
+                      <svg width="100" height="51">
+                        <rect class='color' width="300" height="100" style="fill:rgb(255,250,250);" />
+                      </svg>
+                    </div>
+                    <div class="col-sm-1">
+                      <svg width="100" height="51">
+                        <rect width="300" height="100" style="fill:rgb(34,139,34);" />
+                      </svg>
+                    </div>
+                    <div class="col-sm-1">
+                      <svg width="100" height="51">
+                        <rect width="300" height="100" style="fill:rgb(193, 154, 107);" />
+                      </svg>
+                    </div>
+                    <div class="col-sm-1">
+                      <svg width="100" height="51">
+                        <rect width="300" height="100" style="fill:rgb(139, 99, 55);" />
+                      </svg>
+                    </div>
+                    <div class="col-sm-1">
+                      <svg width="100" height="51">
+                        <rect width="300" height="100" style="fill:rgb(115,115,125);" />
+                      </svg>
+                    </div>
                 </div>
                 <div class="col-sm-1">
                   <svg width="100" height="51">
@@ -60,7 +284,7 @@
                 </div>
             </div>     
 	</div>
-
+        
         <div class="container results">
           <div id="output">
             
@@ -94,6 +318,7 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="search.js"></script>
         <script src="./lightbox/ekko-lightbox.js"></script>
+	<script type="text/javascript" src="options.js"></script>
     </body>
 </html>
 
