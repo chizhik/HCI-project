@@ -98,47 +98,29 @@ $('#option-cartoon-real').hover(function() {
 });
  
 
-// option in this bar is chosen
-// $('.animalimage').click(function() {  
-// 	op_animal_hov = 2;
-// });
-
-// $('.place-image').click(function() {  
-// 	op_place_hov = 2;
-// });
-
-// $('.color').click(function() {  
-// 	op_color_hov = 2;
-// });
-
-// $('.animal-type').click(function() {  
-// 	op_type_hov = 2;
-// });
-
-
 // select particular animal
 for (i = 0; i < 10; i++) {
 	$('#animal' + (i + 1)).click(function() {  
 
 		// select this
-		//console.log(this.style.backgroundColor);
-		if (this.style.backgroundColor === "yellow") {
+		if (this.className === "animalimageselected") {
+			this.className = "animalimage";
 			//this.style.backgroundColor="white";
 			// deselect everything 
 			for (j = 0; j < 10; j++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
 			}
 			op_animal_hov = 0;
-                        setFavorite("");
-                        SearchOpts();
 		} else {
 			op_animal_hov = 2;
 			for (j = 0; j < 10; j++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
+				document.getElementById('animal' + (j+1)).className = 'animalimage';
+
 			}
+			this.className = "animalimageselected";
 			this.style.backgroundColor="yellow";
-                        setFavorite($(this).find('img').map(function() { return this.alt; }).get().toString());                          
-                        SearchOpts();
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
@@ -148,23 +130,23 @@ for (i = 0; i < 10; i++) {
 
 		// select this
 		//console.log(this.style.backgroundColor);
-		if (this.style.backgroundColor === "yellow") {
+		if (this.className === "place-imageselected") {
+			this.className = "place-image";
 			//this.style.backgroundColor="white";
 			// deselect everything 
 			for (j = 0; j < 10; j++) {
 				document.getElementById('place' + (j+1)).style.backgroundColor="white";
 			}
 			op_place_hov = 0;
-                        setPlace("");
-                        SearchOpts();
 		} else {
 			op_place_hov = 2;
 			for (j = 0; j < 10; j++) {
 				document.getElementById('place' + (j+1)).style.backgroundColor="white";
+				document.getElementById('place' + (j+1)).className = 'place-image';
 			}
+			this.className = "place-imageselected";
 			this.style.backgroundColor="yellow";
-                        setPlace($(this).find('img').map(function() { return this.alt; }).get().toString());  
-                        SearchOpts();
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
@@ -174,58 +156,122 @@ for (i = 0; i < 6; i++) {
 
 		// select this
 		//console.log(this.style.backgroundColor);
-		if (this.style.backgroundColor === "yellow") {
+		if (this.className === "colorselected") {
+			this.className = "color";
 			//this.style.backgroundColor="white";
 			// deselect everything 
 			for (j = 0; j < 6; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			op_color_hov = 0;
-                        setColor("");
-                        SearchOpts();
+                        //setColor("");
 		} else {
+			//console.log(this.className);
 			op_color_hov = 2;
 			for (j = 0; j < 6; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
+				// change other classes to 'color'
+				document.getElementById('color' + (j+1)).className = 'color';
 			}
+			this.className = "colorselected";
 			this.style.backgroundColor="yellow";
-			//setColor($(this).find('img').map(function() { return this.alt; }).get().toString());
-                        SearchOpts();
+			console.log(this.style.backgroundColor);
 		}
 	});
 }
 
-// select particular type
+// select particular color
 for (i = 0; i < 2; i++) {
-	$('#animal-type' + (i + 1)).click({msg : i+1},function(e) {  
+	$('#animal-type' + (i + 1)).click(function() {  
 
 		// select this
 		//console.log(this.style.backgroundColor);
-		if (this.style.backgroundColor === "yellow") {
+		if (this.className === "animal-typeselected") {
+			this.className = "animal-type";
 			//this.style.backgroundColor="white";
 			// deselect everything 
 			for (j = 0; j < 2; j++) {
 				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
 			}
 			op_type_hov = 0;
-                        setType("");
-                        SearchOpts();
+                        //setType("");
 		} else {
 			op_type_hov = 2;
 			for (j = 0; j < 2; j++) {
 				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
+				document.getElementById('animal-type' + (j+1)).className = 'animal-type';
 			}
+			this.className = "animal-typeselected";
 			this.style.backgroundColor="yellow";
-                        setType($(this).find('img').map(function() { return this.alt; }).get().toString());    
-                        SearchOpts();
+                        //setType($(this).attr("alt"));
+                        //console.log(this);                        
 		}
 	});
 }
 
+// once an option is selected we should still be able to hover the rest
 
 
 
+ for (i = 0; i < 10; i++) {
+ 	$('#animal' + (i + 1)).hover(
+	 	function() {
+	 		if (this.className === 'animalimage') {
+	 			this.style.backgroundColor="yellow"; // this makes it yellow already, before clicking
+	 		}
+	 	 }, function() {
+	 	 	// not selected
+	 	 	if (this.className === "animalimage") {
+		 	 	// console.log(this.className === "");
+		 	 	this.style.backgroundColor="white";
+		 	} 
+	 	});
+ }
 
+  for (i = 0; i < 6; i++) {
+ 	$('#color' + (i + 1)).hover(
+	 	function() {
+	 		if (this.className === 'color') {
+	 			this.style.backgroundColor="yellow"; // this makes it yellow already, before clicking
+	 		}
+	 	 }, function() {
+	 	 	// not selected
+	 	 	if (this.className === "color") {
+		 	 	// console.log(this.className === "");
+		 	 	this.style.backgroundColor="white";
+		 	} 
+	 	});
+ }
+
+  for (i = 0; i < 10; i++) {
+ 	$('#place' + (i + 1)).hover(
+	 	function() {
+	 		if (this.className === 'place-image') {
+	 			this.style.backgroundColor="yellow"; // this makes it yellow already, before clicking
+	 		}
+	 	 }, function() {
+	 	 	// not selected
+	 	 	if (this.className === "place-image") {
+		 	 	// console.log(this.className === "");
+		 	 	this.style.backgroundColor="white";
+		 	} 
+	 	});
+ }
+
+  for (i = 0; i < 2; i++) {
+ 	$('#animal-type' + (i + 1)).hover(
+	 	function() {
+	 		if (this.className === 'animal-type') {
+	 			this.style.backgroundColor="yellow"; // this makes it yellow already, before clicking
+	 		}
+	 	 }, function() {
+	 	 	// not selected
+	 	 	if (this.className === "animal-type") {
+		 	 	// console.log(this.className === "");
+		 	 	this.style.backgroundColor="white";
+		 	} 
+	 	});
+ }
 
 
 
