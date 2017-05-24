@@ -24,7 +24,7 @@ $('#option-animal').hover(function() {
 			$(".animal-colors").hide();
 			op_color_hov = 0; 
 		}
-        if (op_type_hov == 1) {
+                if (op_type_hov == 1) {
 			$(".animal-type").hide();
 			op_type_hov = 0; 
 		}
@@ -46,7 +46,7 @@ $('#option-place').hover(function() {
 			$(".animal-colors").hide();
 			op_color_hov = 0; 
 		}
-        if (op_type_hov == 1) {
+                if (op_type_hov == 1) {
 			$(".animal-type").hide();
 			op_type_hov = 0; 
 		}
@@ -68,7 +68,7 @@ $('#option-color').hover(function() {
 			console.log('2');
 			op_animal_hov = 0; 
 		}
-        if (op_type_hov == 1) {
+                if (op_type_hov == 1) {
 			$(".animal-type").hide();
 			op_type_hov = 0; 
 		}
@@ -111,6 +111,8 @@ for (i = 0; i < 10; i++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
 			}
 			op_animal_hov = 0;
+                        setFavorite("");
+                        Search();
 		} else {
 			op_animal_hov = 2;
 			for (j = 0; j < 10; j++) {
@@ -120,7 +122,8 @@ for (i = 0; i < 10; i++) {
 			}
 			this.className = "animalimageselected";
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+			setFavorite($(this).find('img').map(function() { return this.alt; }).get().toString());                          
+                        Search();
 		}
 	});
 }
@@ -138,6 +141,8 @@ for (i = 0; i < 10; i++) {
 				document.getElementById('place' + (j+1)).style.backgroundColor="white";
 			}
 			op_place_hov = 0;
+                        setPlace("");
+                        Search();
 		} else {
 			op_place_hov = 2;
 			for (j = 0; j < 10; j++) {
@@ -146,7 +151,8 @@ for (i = 0; i < 10; i++) {
 			}
 			this.className = "place-imageselected";
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+			setPlace($(this).find('img').map(function() { return this.alt; }).get().toString());  
+                        Search();
 		}
 	});
 }
@@ -164,7 +170,8 @@ for (i = 0; i < 6; i++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			op_color_hov = 0;
-                        //setColor("");
+                        setColor("");
+                        Search();
 		} else {
 			//console.log(this.className);
 			op_color_hov = 2;
@@ -175,7 +182,8 @@ for (i = 0; i < 6; i++) {
 			}
 			this.className = "colorselected";
 			this.style.backgroundColor="yellow";
-			console.log(this.style.backgroundColor);
+			//setColor($(this).find('img').map(function() { return this.alt; }).get().toString());
+                        Search();
 		}
 	});
 }
@@ -194,7 +202,8 @@ for (i = 0; i < 2; i++) {
 				document.getElementById('animal-type' + (j+1)).style.backgroundColor="white";
 			}
 			op_type_hov = 0;
-                        //setType("");
+                        setType("");
+                        Search();
 		} else {
 			op_type_hov = 2;
 			for (j = 0; j < 2; j++) {
@@ -203,8 +212,8 @@ for (i = 0; i < 2; i++) {
 			}
 			this.className = "animal-typeselected";
 			this.style.backgroundColor="yellow";
-                        //setType($(this).attr("alt"));
-                        //console.log(this);                        
+                        setType($(this).find('img').map(function() { return this.alt; }).get().toString());    
+                        Search();                       
 		}
 	});
 }

@@ -9,32 +9,50 @@ var place = "";
 var type = "";
 
 function setFavorite(add){
+    if(favorite !== ""){
+        removeOldOptionFromQuery(favorite);
+    }
     favorite = add;
 }
 
 function setColor(add){
+    if(color !== ""){
+        removeOldOptionFromQuery(color);
+    }
     color = add;
 }
 
 function setPlace(add){
+    if(place !== ""){
+        removeOldOptionFromQuery(place);
+    }
     place = add;
 }
 
 function setType(add){
+    if(type !== ""){
+        removeOldOptionFromQuery(type);
+    }
     type = add;
+}
+
+function removeOldOptionFromQuery(stringToRemove){
+    var query = $("#txtSearchTerm").val();
+    query = query.replace(stringToRemove, "");
+    $("#txtSearchTerm").val(query);
 }
 
 
 
 $(function ()
 {
-    $('#btnSearch').click(function () { Search($("#txtSearchTerm").val());});
+    $('#btnSearch').click(function () { Search();});
     $('input[type=text]').on('keydown', function(e){
-        if (e.which==13){
-            Search($("#txtSearchTerm").val());
+        if (e.which===13){
+            Search();
         }
     });
-    $('#loadMoreButton').click(function () { Search($('#txtSearchTerm').val());});
+    $('#loadMoreButton').click(function () { Search();});
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         // alert("JJJ");
         event.preventDefault();
@@ -52,31 +70,28 @@ $(function ()
     });
 });
 
-function SearchOpts()
+function Search()
 {
-    var opts = '';
-    if(favorite != ""){
-        opts = opts + " " + favorite;
+    var term = $("#txtSearchTerm").val();
+    
+    if (!(search_term === term)) {
+        search_term = term;
+        search_index = 0;
     }
-    if(color != ""){
-        opts = opts + " " + color;
-    }
-    if(place != ""){
-        opts = opts + " " + place;
-    }
-    if(type = ""){
-        opts = opts + " " + type;
-    }
-    console.log(opts);
-    $("#txtSearchTerm").val(opts);
-    search_term = opts;
-    search_index = 0;
-
     var start = search_index*10 + 1;
-    var opts_query = opts.split(" ").join("+");
+    
+    term = addIconOpts(term);
+    
+    var query = "";
+    if(term !== ""){
+        query = term.split(" ").join("+");
+    }    
+    
+    console.log(query);
     var url = "https://www.googleapis.com/customsearch/v1?key="
-    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + opts_query + "&searchType=image&callback=?";
-    if (search_index == 0) {
+    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
+    // url = "http://localhost/dummy.js?callback=?";
+    if (search_index === 0) {
         $.getJSON(url, '', FirstResults);
     }
     else
@@ -89,35 +104,55 @@ function SearchOpts()
     else {
         $('.loadMore').hide();
     }
-    search_index += 1
+    search_index += 1;    
 }
 
-function Search(term)
+function addIconOpts(term)
 {
-    if (!(search_term === term)) {
-        search_term = term;
-        search_index = 0;
+    var opts = '';
+    if(favorite !== ""){
+        if(isStringinQuery(term,favorite) === false){
+            opts = favorite;
+        }        
     }
-    var start = search_index*10 + 1;
-    var query = term.split(" ").join("+");
+    if(color !== ""){
+        if(isStringinQuery(term,color) === false){
+            if(opts === ""){
+                opts = color;
+            }else{
+                opts = opts + " " + color;
+            }
+            
+        } 
+    }
+    if(place !== ""){
+        if(isStringinQuery(term,place) === false){
+            if(opts === ""){
+                opts = place;
+            }else{
+                opts = opts + " " + place;    
+            }
+        }
+    }
+    if(type !== ""){
+        if(isStringinQuery(term,type) === false){
+            if(opts === ""){
+                opts = type;
+            }else {
+                opts = opts + " " + type;
+            }
+        }        
+    }
+    term += opts;
+    $("#txtSearchTerm").val(term);
+    return term;
+}
+
+function isStringinQuery(query, string){
     console.log(query);
-    var url = "https://www.googleapis.com/customsearch/v1?key="
-    + "AIzaSyCojH9Lu1vXE4f2MhxPF9kvJuqXo4nDPRQ" + "&num=10&cx=" + "017406780437479842754:il_s2aky6zc" + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
-    // url = "http://localhost/dummy.js?callback=?";
-    if (search_index == 0) {
-        $.getJSON(url, '', FirstResults);
-    }
-    else
-    {
-        $.getJSON(url, '', MoreResults);
-    }
-    if (search_index <= 4) {
-        $('.loadMore').show()
-    }
-    else {
-        $('.loadMore').hide()
-    }
-    search_index += 1
+    console.log(string);
+    console.log(query.includes(string));
+    return query.includes(string);
     
 }
 
