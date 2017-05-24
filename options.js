@@ -181,14 +181,13 @@ for (i = 0; i < 6; i++) {
 				document.getElementById('color' + (j+1)).className = 'color';
 			}
 			this.className = "colorselected";
-			this.style.backgroundColor="yellow";
-			//setColor($(this).find('img').map(function() { return this.alt; }).get().toString());
+			setColor($(this).attr("title").toString());
                         Search();
 		}
 	});
 }
 
-// select particular color
+// select particular colortype
 for (i = 0; i < 2; i++) {
 	$('#animal-type' + (i + 1)).click(function() {  
 
