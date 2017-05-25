@@ -126,7 +126,7 @@ function Search()
     var url = "https://www.googleapis.com/customsearch/v1?key="
     + key1 + "&num=9&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
     // url = "http://localhost/dummy.js?callback=?";
-    console.log("URL:" + url);
+    // console.log("URL:" + url);
     if (search_index === 0) {
         $.getJSON(url, '', FirstResults);
     }
