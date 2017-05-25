@@ -188,6 +188,7 @@ for (i = 0; i < 6; i++) {
 				document.getElementById('color' + (j+1)).className = 'color';
 			}
 			this.className = "colorselected";
+			this.style.backgroundColor="yellow";
 			setColor($(this).attr("title").toString());
                         Search();
 		}
