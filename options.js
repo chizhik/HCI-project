@@ -164,7 +164,7 @@ for (i = 0; i < 10; i++) {
 	});
 }
 // select particular color
-for (i = 0; i < 6; i++) {
+for (i = 0; i < 8; i++) {
 	$('#color' + (i + 1)).click(function() {  
 
 		// select this
@@ -173,7 +173,7 @@ for (i = 0; i < 6; i++) {
 			this.className = "color";
 			//this.style.backgroundColor="white";
 			// deselect everything 
-			for (j = 0; j < 6; j++) {
+			for (j = 0; j < 8; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			op_color_hov = 0;
@@ -182,7 +182,7 @@ for (i = 0; i < 6; i++) {
 		} else {
 			//console.log(this.className);
 			op_color_hov = 2;
-			for (j = 0; j < 6; j++) {
+			for (j = 0; j < 8; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 				// change other classes to 'color'
 				document.getElementById('color' + (j+1)).className = 'color';
@@ -260,7 +260,7 @@ for (i = 0; i < 2; i++) {
 	 	});
  }
 
-  for (i = 0; i < 6; i++) {
+  for (i = 0; i < 8; i++) {
  	$('#color' + (i + 1)).hover(
 	 	function() {
 	 		if (this.className === 'color') {
