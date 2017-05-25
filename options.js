@@ -194,7 +194,7 @@ for (i = 0; i < 6; i++) {
 	});
 }
 
-// select particular type
+// select particular cartoon
 $("#option-cartoon-real").click(function(){
     if(cartoonClicked === false){
         op_type_hov = 2;
