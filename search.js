@@ -1,7 +1,7 @@
 var search_index = 0;
 var search_term = '';
 
-var query = "";
+var oldquery = "";
 var qarr = []
 
 var favorite = "";
@@ -14,10 +14,10 @@ var key2 = "017406780437479842754:il_s2aky6zc";
 // Olzhas
 // var key1 = "AIzaSyA2uHMtgKOVYdR8J_NgU3awwbTl_ROLch8";
 // Alisher
-// var key1 = "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk";
+var key1 = "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk";
 // var key2 = "";
 // Michael
-var key1 = "AIzaSyDh5dCTjagdYQ-PXBB8xxsXxuQ3gfk3dCw";
+// var key1 = "AIzaSyDh5dCTjagdYQ-PXBB8xxsXxuQ3gfk3dCw";
 // Eunji
 /* var key1 = "";
 var key2 = ""; */
@@ -113,17 +113,20 @@ function Search()
         qarr = newarr;
     }
     
-    var start = search_index*9 + 1;
-    
     addIconOpts();
     
     var query = qarr.join('+');
-
+    if (query !== oldquery) {
+        search_index = 0;
+        oldquery = query;
+    }
+    var start = search_index*9 + 1;
     
     console.log("Query: " + query);
     var url = "https://www.googleapis.com/customsearch/v1?key="
     + key1 + "&num=9&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
     // url = "http://localhost/dummy.js?callback=?";
+    console.log("URL:" + url);
     if (search_index === 0) {
         $.getJSON(url, '', FirstResults);
     }
