@@ -10,11 +10,11 @@ The Icon search allows children to search without typing in text. It supports th
 The target user are Children, under 9 years old, interested in animals.
 
 Explanation about the different files:
-index.html 
-- This html file includes the basic structure of the interface. It consists of search part, option part and result part. 
+index.html:
+This html file includes the basic structure of the interface. It consists of search part, option part and result part. 
 
-search.js 
-- This javascript includes all the search operation. If a children types in keywords in the input field and press enter or press the search button, a request to the Google Costum Api is trasmitted. The response is a JSON file, which is parsed and shown in the result part of the html file. Also, the query is build of the different Icons, which are selected in the categorie menu. 
+search.js:
+This javascript includes all the search operation. If a children types in keywords in the input field and press enter or press the search button, a request to the Google Costum Api is trasmitted. The response is a JSON file, which is parsed and shown in the result part of the html file. Also, the query is build of the different Icons, which are selected in the categorie menu. 
 
-options.js 
-- This Javascript code handels the interaction from the children with the categoie Icon buttons. Hover and Clicking events are handled.
+options.js: 
+This Javascript code handels the interaction from the children with the categoie Icon buttons. Hover and Clicking events are handled.
