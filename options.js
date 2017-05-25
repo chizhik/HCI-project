@@ -10,6 +10,8 @@ var op_place_hov = 0;
 var op_color_hov = 0;
 var op_type_hov = 0;
 
+var cartoonClicked = false;
+
 
 $('#option-animal').hover(function() {
 	// wasnt' hovered
@@ -77,7 +79,7 @@ $('#option-color').hover(function() {
 
 $('#option-cartoon-real').hover(function() {
 	// wasnt' hovered
-	if (op_type_hov == 0) {
+	/*if (op_type_hov == 0) {
 		op_type_hov = 1; 
 		$(".animal-type").show();
 		if (op_place_hov == 1) {
@@ -89,12 +91,17 @@ $('#option-cartoon-real').hover(function() {
 			console.log('2');
 			op_animal_hov = 0; 
 		}
-        if (op_color_hov == 1) {
+                if (op_color_hov == 1) {
 			$(".animal-colors").hide();
 			console.log('tt');
 			op_color_hov = 0; 
 		}
-	}
+	}*/
+    if (op_type_hov == 0) {
+	op_type_hov = 1;
+    }else{
+        op_type_hov = 0;
+    }
 });
  
 
@@ -157,7 +164,7 @@ for (i = 0; i < 10; i++) {
 	});
 }
 // select particular color
-for (i = 0; i < 6; i++) {
+for (i = 0; i < 8; i++) {
 	$('#color' + (i + 1)).click(function() {  
 
 		// select this
@@ -166,7 +173,7 @@ for (i = 0; i < 6; i++) {
 			this.className = "color";
 			//this.style.backgroundColor="white";
 			// deselect everything 
-			for (j = 0; j < 6; j++) {
+			for (j = 0; j < 8; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			op_color_hov = 0;
@@ -175,19 +182,36 @@ for (i = 0; i < 6; i++) {
 		} else {
 			//console.log(this.className);
 			op_color_hov = 2;
-			for (j = 0; j < 6; j++) {
+			for (j = 0; j < 8; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 				// change other classes to 'color'
 				document.getElementById('color' + (j+1)).className = 'color';
 			}
 			this.className = "colorselected";
+			this.style.backgroundColor="yellow";
 			setColor($(this).attr("title").toString());
                         Search();
 		}
 	});
 }
 
-// select particular colortype
+// select particular cartoon
+$("#option-cartoon-real").click(function(){
+    if(cartoonClicked === false){
+        op_type_hov = 2;
+        this.style.backgroundColor="yellow";
+        setType($(this).find('img').map(function() { return this.alt; }).get().toString());    
+        Search();  
+        cartoonClicked = true;
+    }else{
+        this.style.backgroundColor="";
+        op_type_hov = 0;
+        setType("");
+        Search();
+        cartoonClicked = false;
+    }
+});
+
 for (i = 0; i < 2; i++) {
 	$('#animal-type' + (i + 1)).click(function() {  
 
@@ -236,7 +260,7 @@ for (i = 0; i < 2; i++) {
 	 	});
  }
 
-  for (i = 0; i < 6; i++) {
+  for (i = 0; i < 8; i++) {
  	$('#color' + (i + 1)).hover(
 	 	function() {
 	 		if (this.className === 'color') {
@@ -265,21 +289,7 @@ for (i = 0; i < 2; i++) {
 		 	} 
 	 	});
  }
-
-  for (i = 0; i < 2; i++) {
- 	$('#animal-type' + (i + 1)).hover(
-	 	function() {
-	 		if (this.className === 'animal-type') {
-	 			this.style.backgroundColor="yellow"; // this makes it yellow already, before clicking
-	 		}
-	 	 }, function() {
-	 	 	// not selected
-	 	 	if (this.className === "animal-type") {
-		 	 	// console.log(this.className === "");
-		 	 	this.style.backgroundColor="white";
-		 	} 
-	 	});
- }
+ 
 
 
 

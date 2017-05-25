@@ -58,41 +58,11 @@
     background-color: yellow;
 }
 
-#option-animal img {
-    width: 80px;
-    height: 80px;
-    padding-left: 3px;
-}
-
-#option-place img {
-    width: 80px;
-    height: 80px;
-    padding-left: 15px;
-    padding-top: 10px;
-}
-
-#option-cartoon-real img {
+.option img {
     width: 70px;
     height: 70px;
     margin-left: 10px;
     margin-top: 10px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-}
-
-#option-cartoon-real {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 .animal-type img {
