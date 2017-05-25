@@ -2,6 +2,7 @@ var search_index = 0;
 var search_term = '';
 
 var query = "";
+var qarr = []
 
 var favorite = "";
 var color = "";
@@ -13,8 +14,8 @@ var key2 = "017406780437479842754:il_s2aky6zc";
 // Olzhas
 // var key1 = "AIzaSyA2uHMtgKOVYdR8J_NgU3awwbTl_ROLch8";
 // Alisher
-/* var key1 = "";
-var key2 = ""; */
+// var key1 = "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk";
+// var key2 = "";
 // Michael
 var key1 = "AIzaSyDh5dCTjagdYQ-PXBB8xxsXxuQ3gfk3dCw";
 // Eunji
@@ -50,10 +51,12 @@ function setType(add){
 }
 
 function removeOldOptionFromQuery(stringToRemove){
-    var query = $("#txtSearchTerm").val();
-    query = query.replace(stringToRemove, "");
-    query = query.replace(" ", "");
-    query = query.replace(" ", "");
+    console.log(qarr)
+    var idx = qarr.indexOf(stringToRemove);
+    if (idx > -1) {
+        qarr.splice(idx, 1);
+    }
+    var query = qarr.join(' ');
     $("#txtSearchTerm").val(query);
 }
 
@@ -91,24 +94,35 @@ $(function ()
 function Search()
 {
     var term = $("#txtSearchTerm").val();
-    
-    if (!(search_term === term)) {
-        search_term = term;
-        search_index = 0;
+    if (term !== '') {
+        var termarr = term.split(" ");
+        var newarr = [];
+        for (var i = 0; i < termarr.length; i++) {
+            if (termarr[i] === 'light' && termarr[i+1] === 'brown') {
+                newarr.push('light brown');
+                i++;
+            }
+            else if (termarr[i] === 'dark' && termarr[i+1] === 'brown') {
+                newarr.push('dark brown');
+                i++;
+            }
+            else {
+                newarr.push(termarr[i]);
+            }
+        }
+        qarr = newarr;
     }
     
-    var start = search_index*10 + 1;
+    var start = search_index*9 + 1;
     
-    term = addIconOpts(term);
+    addIconOpts();
     
-    var query = "";
-    if(term !== ""){
-        query = term.split(" ").join("+");
-    }    
+    var query = qarr.join('+');
+
     
     console.log("Query: " + query);
     var url = "https://www.googleapis.com/customsearch/v1?key="
-    + key1 + "&num=10&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
+    + key1 + "&num=9&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
     // url = "http://localhost/dummy.js?callback=?";
     if (search_index === 0) {
         $.getJSON(url, '', FirstResults);
@@ -125,64 +139,37 @@ function Search()
     }    
 }
 
-function addIconOpts(term)
+function addIconOpts()
 {
-    var opts = "";
     
     if(favorite !== ""){
-        if(isStringinQuery(term,favorite) === false){
-            opts = favorite;
+        if(isStringinQuery(favorite) === false){
+            qarr.push(favorite);
         }        
     }
     if(color !== ""){
-        if(isStringinQuery(term,color) === false){
-            if(opts === ""){
-                opts = color;
-            }else{
-                opts = opts + " " + color;
-            }
-            
+        if(isStringinQuery(color) === false){
+            qarr.push(color);
         } 
     }
     if(place !== ""){
-        if(isStringinQuery(term,place) === false){
-            if(opts === ""){
-                opts = place;
-            }else{
-                opts = opts + " " + place;    
-            }
+        if(isStringinQuery(place) === false){
+            qarr.push(place);
         }
     }
     if(type !== ""){
-        if(isStringinQuery(term,type) === false){
-            if(opts === ""){
-                opts = type;
-            }else {
-                opts = opts + " " + type;
-            }
+        if(isStringinQuery(type) === false){
+            qarr.push(type);
         }        
     }
-    term = term + " " + opts;
-    //term = removeBlanksromQuery(term);
-    console.log(term);
-    $("#txtSearchTerm").val(term);
-    return term;
+    $("#txtSearchTerm").val(qarr.join(" "));
 }
 
-function removeBlanksromQuery(string){
-    /*var newString = "";
-    if(string.includes(" ")){
-        do{
-            newString = string.replace(" ", "");
-        }while(string !== newString);    
-    }else{
-        newString = string;
-    }    
-    return newString;*/
-}
-
-function isStringinQuery(query, string){
-    return query.includes(string);    
+function isStringinQuery(string){
+    var idx = qarr.indexOf(string);
+    if (idx > -1)
+        return true;
+    return false;
 }
 
 function MoreResults(response)
