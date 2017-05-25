@@ -1,3 +1,8 @@
-v1 - sends request and receives search results in JSON format
+index.html 
+	- Animal search engine for kids provides typical search and icon search ( user can search without search query. just select some options )
 
-v2 - receives Javascript from Google Custom Search. Ready website but I don't know if it is possible to customize it.
+search.js 
+	- javascript code for typical search and showing result
+
+options.js 
+	- javascript code for image search and hovering in search 
