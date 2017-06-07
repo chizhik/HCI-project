@@ -106,7 +106,7 @@ $('#option-cartoon-real').hover(function() {
  
 
 // select particular animal
-for (i = 0; i < 10; i++) {
+for (i = 0; i < 12; i++) {
 	$('#animal' + (i + 1)).click(function() {  
 
 		// select this
@@ -164,7 +164,7 @@ for (i = 0; i < 10; i++) {
 	});
 }
 // select particular color
-for (i = 0; i < 8; i++) {
+for (i = 0; i < 9; i++) {
 	$('#color' + (i + 1)).click(function() {  
 
 		// select this
@@ -245,7 +245,7 @@ for (i = 0; i < 2; i++) {
 
 
 
- for (i = 0; i < 10; i++) {
+ for (i = 0; i < 12; i++) {
  	$('#animal' + (i + 1)).hover(
 	 	function() {
 	 		if (this.className === 'animalimage') {
@@ -260,7 +260,7 @@ for (i = 0; i < 2; i++) {
 	 	});
  }
 
-  for (i = 0; i < 8; i++) {
+  for (i = 0; i < 9; i++) {
  	$('#color' + (i + 1)).hover(
 	 	function() {
 	 		if (this.className === 'color') {
