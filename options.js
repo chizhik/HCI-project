@@ -290,6 +290,14 @@ for (i = 0; i < 2; i++) {
 	 	});
  }
  
+ function hideOptions(){
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        $("#options").hide();
+    } else {
+        $("#options").show();
+    }
+ }
+ 
 
 
 
