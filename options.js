@@ -114,7 +114,7 @@ for (i = 0; i < 12; i++) {
 			this.className = "animalimage";
 			//this.style.backgroundColor="white";
 			// deselect everything 
-			for (j = 0; j < 10; j++) {
+			for (j = 0; j < 12; j++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
 			}
 			op_animal_hov = 0;
@@ -122,7 +122,7 @@ for (i = 0; i < 12; i++) {
                         Search();
 		} else {
 			op_animal_hov = 2;
-			for (j = 0; j < 10; j++) {
+			for (j = 0; j < 12; j++) {
 				document.getElementById('animal' + (j+1)).style.backgroundColor="white";
 				document.getElementById('animal' + (j+1)).className = 'animalimage';
 
@@ -173,7 +173,7 @@ for (i = 0; i < 9; i++) {
 			this.className = "color";
 			//this.style.backgroundColor="white";
 			// deselect everything 
-			for (j = 0; j < 8; j++) {
+			for (j = 0; j < 9; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 			}
 			op_color_hov = 0;
@@ -182,7 +182,7 @@ for (i = 0; i < 9; i++) {
 		} else {
 			//console.log(this.className);
 			op_color_hov = 2;
-			for (j = 0; j < 8; j++) {
+			for (j = 0; j < 9; j++) {
 				document.getElementById('color' + (j+1)).style.backgroundColor="white";
 				// change other classes to 'color'
 				document.getElementById('color' + (j+1)).className = 'color';
