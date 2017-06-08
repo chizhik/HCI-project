@@ -2,7 +2,7 @@ var search_index = 0;
 var search_term = '';
 
 var oldquery = "";
-var qarr = []
+var qarr = [];
 
 var favorite = "";
 var color = "";
@@ -51,7 +51,7 @@ function setType(add){
 }
 
 function removeOldOptionFromQuery(stringToRemove){
-    console.log(qarr)
+    console.log(qarr);
     var idx = qarr.indexOf(stringToRemove);
     if (idx > -1) {
         qarr.splice(idx, 1);
@@ -64,6 +64,7 @@ function removeOldOptionFromQuery(stringToRemove){
 
 $(function ()
 {
+    $("#txtSearchTerm").val("");
     $('#btnSearch').click(function () { Search();});
     $('input[type=text]').on('keydown', function(e){
         if (e.which===13){
@@ -112,29 +113,34 @@ function Search()
         }
         qarr = newarr;
     }
-    
     addIconOpts();
-    
+    if (qarr.length === 0) {
+        clearResults();
+        $('.loadMore').hide();
+        return;
+    }
     var query = qarr.join('+');
     if (query !== oldquery) {
         search_index = 0;
         oldquery = query;
     }
-    var start = search_index*9 + 1;
+    var start = search_index*10 + 1;
     
     console.log("Query: " + query);
-    var url = "https://www.googleapis.com/customsearch/v1?key="
-    + key1 + "&num=9&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
+    var url1 = "https://www.googleapis.com/customsearch/v1?key="
+    + key1 + "&num=10&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
+    search_index += 1;
+    start = search_index*10 + 1;
+    var url2 = "https://www.googleapis.com/customsearch/v1?key="
+    + key1 + "&num=10&cx=" + key2 + "&start=" + start + "&q=" + query + "&searchType=image&callback=?";
     // url = "http://localhost/dummy.js?callback=?";
     // console.log("URL:" + url);
-    if (search_index === 0) {
-        $.getJSON(url, '', FirstResults);
+    if (search_index < 2) {
+        clearResults();
     }
-    else
-    {
-        $.getJSON(url, '', MoreResults);
-    }
-    if (search_index <= 4) {
+    $.getJSON(url1, '', MoreResults);
+    $.getJSON(url2, '', MoreResults);
+    if (search_index < 6) {
         $('.loadMore').show();
     }
     else {
@@ -177,25 +183,43 @@ function isStringinQuery(string){
 
 function MoreResults(response)
 {
-    var html = "";
-    for (var i = 0; i < response.items.length; i++) {
-        var item = response.items[i];
-        // html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
-        html += '<a href="' + item.link + '" data-title="' + item.title + '" data-toggle="lightbox" data-gallery="example-gallery">'
-        + '<img src="' + item.link + '" title="' + item.title + '" alt="' + item.title + '" class="img-circle col-sm-4" width="350" height="350"></a>';
-    }
-    $("#output").append(html);
-}
-
-function FirstResults(response)
-{
-    var html = "";
+    var div = "";
     for (var i = 0; i < response.items.length; i++) {
   		var item = response.items[i];
   		// html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
-        html += '<a href="' + item.link + '" data-title="' + item.title + '" data-toggle="lightbox" data-gallery="example-gallery">'
-        + '<img src="' + item.link + '" title="' + item.title + '" alt="' + item.title + '" class="img-circle col-sm-4" width="350" height="350"></a>';
+        var html = '<a href="' + item.link + '" data-title="' + item.title + '" data-toggle="lightbox" data-gallery="example-gallery">'
+        + '<img src="' + item.link + '" title="' + item.title + '" alt="' + item.title + '" class="outputPad" width="200" height="200"></a>';
+        var idx = i % 5;
+        div = '#row' + idx;
+        $(div).append(html);
 	}
-	$("#output").html(html);
+    // $("#output").append(html);
 }
+
+function clearResults() {
+    var div = "";
+    for (var j = 0; j < 5; j++) {
+        div = '#row' + j;
+        $(div).html("");
+    }
+}
+
+// function FirstResults(response)
+// {
+//     var div = "";
+//     for (var j = 0; j < 5; j++) {
+//         div = '#row' + j;
+//         $(div).html("");
+//     }
+//     for (var i = 0; i < response.items.length; i++) {
+//   		var item = response.items[i];
+//   		// html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
+//         var html = '<a href="' + item.link + '" data-title="' + item.title + '" data-toggle="lightbox" data-gallery="example-gallery">'
+//         + '<img src="' + item.link + '" title="' + item.title + '" alt="' + item.title + '" class="outputPad" width="200" height="200"></a>';
+//         var idx = i % 5;
+//         div = '#row' + idx;
+//         $(div).append(html);
+// 	}
+// 	// $("#output").html(html);
+// }
 // https://peter.hahndorf.eu/blog/UsingTheGoogleCustomSearchAPIV.html
