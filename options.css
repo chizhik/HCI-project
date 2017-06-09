@@ -55,7 +55,7 @@
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 .option:hover {
-    background-color: #e5ffff;
+    background-color: #99d066;
 }
 
 .option img {
@@ -102,11 +102,11 @@
 }
 
 .place-image:hover {
-    background-color: #e5ffff;
+    background-color: #99d066;
 }
 
 .animalimage:hover {
-     background-color: #e5ffff;
+     background-color: #99d066;
 }
 
 .color {
@@ -145,13 +145,13 @@ svg {
     
 }
 .color:hover {
-     background-color: #e5ffff;
+     background-color: #99d066;
 }
 text {
     font: arial;
 }
 .animal-type:hover{
-    background-color: #e5ffff;
+    background-color: #99d066;
 }
 .colorselected {
     width: 90px;

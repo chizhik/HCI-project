@@ -11,7 +11,7 @@ var op_color_hov = 0;
 var op_type_hov = 0;
 
 var cartoonClicked = false;
-var hovering_color = "#e5ffff";
+var hovering_color = "#99d066";
 
 
 $('#option-animal').hover(function() {
@@ -250,7 +250,7 @@ for (i = 0; i < 2; i++) {
  	$('#animal' + (i + 1)).hover(
 	 	function() {
 	 		if (this.className === 'animalimage') {
-	 			this.style.backgroundColor="rgb(0, 206, 0)"; // this makes it rgb(0, 206, 0) already, before clicking
+	 			this.style.backgroundColor=hovering_color; // this makes it rgb(0, 206, 0) already, before clicking
 	 		}
 	 	 }, function() {
 	 	 	// not selected
