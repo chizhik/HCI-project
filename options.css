@@ -55,6 +55,7 @@
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 .option:hover {
+<<<<<<< HEAD
     background-color: #76d275;
 }
 .place-image:hover {
@@ -69,6 +70,9 @@
 }
 .animal-type:hover{
     background-color: #76d275;
+=======
+    background-color: #99d066;
+>>>>>>> c5418a6bdbdb02e4c2f1f8b41df42cdacf5611e2
 }
 
 .option img {
@@ -114,6 +118,17 @@
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
+<<<<<<< HEAD
+=======
+.place-image:hover {
+    background-color: #99d066;
+}
+
+.animalimage:hover {
+     background-color: #99d066;
+}
+
+>>>>>>> c5418a6bdbdb02e4c2f1f8b41df42cdacf5611e2
 .color {
     width: 90px;
     height: 90px;
@@ -146,14 +161,26 @@ svg {
     margin-top: 0.35em;
     margin-left: 0.35em; 
     margin-right: 0.35em;
-    margin-bottom: 0.35em;a
+    margin-bottom: 0.35em;
     
 }
+<<<<<<< HEAD
 
 text {
     font: arial;
 }
 
+=======
+.color:hover {
+     background-color: #99d066;
+}
+text {
+    font: arial;
+}
+.animal-type:hover{
+    background-color: #99d066;
+}
+>>>>>>> c5418a6bdbdb02e4c2f1f8b41df42cdacf5611e2
 .colorselected {
     width: 90px;
     height: 90px;
