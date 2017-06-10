@@ -14,10 +14,10 @@ var key2 = "017406780437479842754:il_s2aky6zc";
 // Olzhas
 // var key1 = "AIzaSyA2uHMtgKOVYdR8J_NgU3awwbTl_ROLch8";
 // Alisher
-var key1 = "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk";
+// var key1 = "AIzaSyCIjld6maNImk6Z2bWQT3HEI1GwIICBuyk";
 // var key2 = "";
 // Michael
-// var key1 = "AIzaSyDh5dCTjagdYQ-PXBB8xxsXxuQ3gfk3dCw";
+var key1 = "AIzaSyDh5dCTjagdYQ-PXBB8xxsXxuQ3gfk3dCw";
 // Eunji
 /* var key1 = "";
 var key2 = ""; */
