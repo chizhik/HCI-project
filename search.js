@@ -203,23 +203,3 @@ function clearResults() {
         $(div).html("");
     }
 }
-
-// function FirstResults(response)
-// {
-//     var div = "";
-//     for (var j = 0; j < 5; j++) {
-//         div = '#row' + j;
-//         $(div).html("");
-//     }
-//     for (var i = 0; i < response.items.length; i++) {
-//   		var item = response.items[i];
-//   		// html += '<br>' +  '<img src="' + item.link + '" width="300"/>';
-//         var html = '<a href="' + item.link + '" data-title="' + item.title + '" data-toggle="lightbox" data-gallery="example-gallery">'
-//         + '<img src="' + item.link + '" title="' + item.title + '" alt="' + item.title + '" class="outputPad" width="200" height="200"></a>';
-//         var idx = i % 5;
-//         div = '#row' + idx;
-//         $(div).append(html);
-// 	}
-// 	// $("#output").html(html);
-// }
-// https://peter.hahndorf.eu/blog/UsingTheGoogleCustomSearchAPIV.html
